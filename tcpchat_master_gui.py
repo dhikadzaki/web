@@ -6,7 +6,8 @@ from datetime import datetime
 from tkinter import messagebox, scrolledtext, ttk
 
 
-HOST = "127.0.0.1"
+SERVER_HOST = "0.0.0.0"
+CLIENT_HOST = "127.0.0.1"
 PORT = 5000
 BUFFER_SIZE = 1024
 ENCODING = "utf-8"
@@ -305,7 +306,7 @@ class MasterChatGui:
 
         ttk.Label(panel, text="Host").grid(row=0, column=0, sticky="w")
         self.server_host = ttk.Entry(panel)
-        self.server_host.insert(0, HOST)
+        self.server_host.insert(0, SERVER_HOST)
         self.server_host.grid(row=0, column=1, sticky="ew", pady=3)
 
         ttk.Label(panel, text="Port").grid(row=1, column=0, sticky="w")
@@ -340,7 +341,7 @@ class MasterChatGui:
 
         ttk.Label(panel, text="Host").grid(row=0, column=0, sticky="w")
         self.client_host = ttk.Entry(panel)
-        self.client_host.insert(0, HOST)
+        self.client_host.insert(0, CLIENT_HOST)
         self.client_host.grid(row=0, column=1, sticky="ew", padx=(8, 0), pady=3)
 
         ttk.Label(panel, text="Port").grid(row=1, column=0, sticky="w")
